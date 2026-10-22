@@ -110,4 +110,3 @@ with history_tab:
     st.dataframe(history, use_container_width=True, hide_index=True)
     if len(history) > 1:
         st.line_chart(history.set_index("timestamp")[["cost"]])
-    st.caption("O histórico permanece apenas nesta sessão e os cenários podem ter tamanhos diferentes.")
