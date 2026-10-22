@@ -20,11 +20,6 @@ class RouteSolution:
 
 
 class VRPTWOptimizer:
-    """Find a low-cost set of routes; rejected deliveries incur a fixed penalty.
-
-    Monetary costs are represented as integer cents inside OR-Tools. All node
-    identifiers are 1-based; the depot is node zero.
-    """
 
     def __init__(self, distance_matrix: np.ndarray, time_matrix: np.ndarray,
                  vehicles: List[Vehicle], points: List[DeliveryPoint], depot_index: int = 0):
@@ -77,7 +72,6 @@ class VRPTWOptimizer:
             demand_id, 0, [int(v.capacity) for v in self.vehicles], True, 'Capacity'
         )
 
-        # Travel speed differs by vehicle; service time belongs to the departure node.
         time_callbacks = []
         for vehicle in self.vehicles:
             def time_callback(from_index, to_index, v=vehicle):
