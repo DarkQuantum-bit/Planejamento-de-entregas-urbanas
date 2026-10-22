@@ -4,6 +4,8 @@ Aplicação de roteamento de entregas com frota mista (carros e motos), restriç
 
 O projeto usa dados **sintéticos** de entregas posicionadas em torno de São Paulo. Não representa uma malha viária real nem utiliza informações de uma transportadora.
 
+Publicado em: https://planejamento-de-entregas-urbanas.streamlit.app/
+
 ## O problema
 
 Cada entrega possui uma demanda, intervalo de atendimento e duração de serviço. Os veículos têm capacidades, velocidades e custos diferentes. O planejador procura rotas que respeitem a capacidade, contabilizando viagens, uso de veículos e eventuais atrasos.
