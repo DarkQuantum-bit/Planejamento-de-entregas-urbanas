@@ -1,4 +1,3 @@
-"""Interactive delivery planning study using OR-Tools."""
 from datetime import datetime
 from time import perf_counter
 
