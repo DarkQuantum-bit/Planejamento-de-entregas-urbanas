@@ -37,7 +37,6 @@ if run:
         points = generator.generate_delivery_points(deliveries)
         fleet = generator.generate_fleet(cars, motorcycles)
         distances = generator.calculate_distance_matrix(points, generator.city_center)
-        # The optimizer derives travel times from the speed of each vehicle.
         approximate_times = distances * 60 / 40
         optimizer = VRPTWOptimizer(distances, approximate_times, fleet, points)
         optimizer.time_penalty_per_minute = penalty
@@ -81,7 +80,6 @@ if solution.unassigned_points:
 
 map_tab, details_tab, history_tab = st.tabs(["Rotas", "Indicadores", "Histórico"])
 with map_tab:
-    st.caption("Trajetos esquemáticos entre coordenadas geográficas; não representam caminhos reais sobre ruas.")
     viz = RouteVisualizer(*data["depot"])
     map_obj = viz.create_map(solution.routes, data["points"],
                              [data["fleet"][i] for i in solution.vehicle_assignments], solution.metrics)
@@ -106,7 +104,6 @@ with details_tab:
     st.dataframe(breakdown, use_container_width=True, hide_index=True)
     st.metric("Frota utilizada", f'{solution.metrics["fleet_utilization"]:.0f}%')
     st.metric("Tempo de processamento", f'{data["solve_time"]:.2f} s')
-    st.caption("O modelo utiliza busca heurística. O resultado não é certificado como ótimo global.")
 
 with history_tab:
     history = pd.DataFrame(st.session_state.history)
