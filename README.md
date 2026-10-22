@@ -28,13 +28,6 @@ O modelo usa OR-Tools Routing Solver, com busca inicial por arco de menor custo 
 
 Defina tamanho da frota, número de entregas e tolerância a atraso na barra lateral, depois clique em **Otimizar rotas**. O mapa mostra cada roteiro; as abas seguintes apresentam indicadores e histórico da sessão.
 
-## Publicação no Streamlit Community Cloud
-
-1. Publique os arquivos do projeto na raiz de um repositório GitHub público.
-2. Entre em [share.streamlit.io](https://share.streamlit.io) e escolha **Create app**.
-3. Selecione o repositório, a branch `main` e o arquivo `app.py`.
-4. Em configurações avançadas, selecione Python 3.12 e faça o deploy.
-
 ## Organização
 
 `models/data_generator.py` gera instâncias; `models/optimizer.py` formula e resolve o VRPTW; `utils/metrics.py` calcula indicadores; `utils/visualization.py` gera os mapas e gráficos; `app.py` integra a interface.
