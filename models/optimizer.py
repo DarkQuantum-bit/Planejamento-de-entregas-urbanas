@@ -1,4 +1,3 @@
-"""Vehicle routing with heterogeneous operating costs and delivery deadlines."""
 from dataclasses import dataclass
 from typing import Dict, List
 
