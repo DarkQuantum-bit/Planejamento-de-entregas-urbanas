@@ -1,4 +1,3 @@
-"""Reporting helpers for the routing application."""
 from typing import Dict, List
 
 import numpy as np
